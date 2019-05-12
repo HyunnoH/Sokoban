@@ -1,8 +1,8 @@
-#include "header.h"
+#include "Util.h"
 
-void gotoxy(int x, int y) 
+void gotoxy(int x, int y)
 {
-    printf("%c[%d;%df",0x1B,y,x);
+    printf("%c[%d;%df",0x1B, y, x);
 }
 
 int getch(void)
@@ -20,11 +20,3 @@ int getch(void)
     return ch;
 }
 
-void question_quit(void)
-{
-    if(tolower(int key = getch()) == 'q')
-    {    
-        system("clear");
-        exit(0);
-    }
-}

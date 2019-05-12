@@ -1,7 +1,7 @@
 #include "header.h"
 
 void title(void);
-int select_mod(void);
+void select_map(void);
 void draw_stage(void);
 void print_bg(void);
 void printxy(int x, int y, char* s);

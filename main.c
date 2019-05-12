@@ -8,32 +8,16 @@ void option(void);
 int main(int argc, char** argv)
 {
     title();
+    
+    int state = play();
 
-    int mod = select_mod();
-    while(1)
-    {
-        switch(mod)
-        {
-            case 0: play();
-                    break;
-            case 1:
-                    option();
-                    break;
-            case 2:
-            default:
-                    {
-                        system("clear"); exit(0);
-                    }
-        }
-    }
+    sokoban(state);
 }
 
 void play(void)
 {
     system("clear");
-
     print_bg();
-    
     printxy(34, 8, "S O K O B A N");
     printxy(35, 10, "Select map");
     printxy(30, 14, "1");
@@ -46,7 +30,7 @@ void play(void)
         int key = getch();
         if(key == ENTER)
         {
-            sokoban((y-14)/2);
+            return ((y-14)/2);
         }
         else if(key == 'w' && y > 14)
         {
@@ -59,6 +43,8 @@ void play(void)
             y+=2;
         }
     } while(1);
+
+    return 0;
 }
 
 void option(void)

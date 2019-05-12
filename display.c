@@ -11,37 +11,25 @@ void title(void)
     getch();
 }
 
-int select_mod(void)
+void select_map(void)
 {
     system("clear");
     print_bg();
-
     printxy(34, 8, "S O K O B A N");
-    printxy(34, 12, "1. Play");
-    printxy(34, 14, "2. Option");
-    printxy(34, 16, "3. Exit");
+    printxy(34, 10, "1");
+    printxy(34, 12, "2");
+    printxy(34, 14, "Custom Map");
 
-    int y = 12;
-    do{
-        putcharxy(46, y, '<');
-        int key = getch();
-
-        if(key == ENTER){
-            break;
-        }
-        else if(key == 'w' && y > 12)
+    while(1)
+    {
+        if(tolower(int key = getch()) == 'q')
         {
-            putcharxy(46, y, ' ');
-            y-=2;
+            system("clear");
+            exit(0);
         }
-        else if(key == 's' && y < 16)
-        {
-            putcharxy(46, y, ' ');
-            y+=2;
-        }
-    } while(1);
+        else
+            switch(key)
 
-    return (y-12)/2;
 }
 
 void draw_stage(void)
@@ -69,6 +57,7 @@ void putcharxy(int x, int y, char c)
     gotoxy(x, y);
     putchar(c);
 }
+
 const char title_bg[24][80] = 
 {
     "+------------------------------------------------------------------------------+",

@@ -1,6 +1,6 @@
 #include "game.h"
 
-void sokoban(int state)
+void map_select(int state)
 {
     FILE *f;
     switch(state)
@@ -11,4 +11,9 @@ void sokoban(int state)
         case 2:
         default: break;
     }
+}
+
+void Game(void)
+{
+    
 }
